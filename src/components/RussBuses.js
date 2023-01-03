@@ -1,26 +1,25 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationViews";
+import { HostViews } from "./HostViews";
 import { NavBar } from "./nav/NavBar";
+import { HostNavBar } from "./nav/HostNavBar";
 import { Login } from "./auth/Login";
-import { Register } from "./auth/Register";
-import { EmployeeViews } from "./EmployeeViews";
-import { EmployeeNavBar } from "./nav/EmployeeNavBar";
-import "./Repairs.css";
+import { GuestRegister } from "./auth/GuestRegister";
+import { HostRegister } from "./auth/HostRegister";
+import "./RussBus.css";
 import { isStaff } from "../utils/isStaff";
-import { EmployeeRegister } from "./auth/EmployeeRegister";
 
-export const Repairs = () => {
-
+export const RussBuses = () => {
   return (
     <>
       <Route
         render={() => {
-          if (localStorage.getItem("honeyrae")) {
+          if (localStorage.getItem("busboy")) {
             if (isStaff()) {
               return <>
-                  <EmployeeNavBar />
-                  <EmployeeViews />
+                  <HostNavBar />
+                  <HostViews />
                 </>
             }
             else {
@@ -34,15 +33,14 @@ export const Repairs = () => {
           }
         }}
       />
-
       <Route path="/login">
         <Login />
       </Route>
       <Route path="/register">
-        <Register />
+        <GuestRegister />
       </Route>
-      <Route path="/registeremployee">
-        <EmployeeRegister />
+      <Route path="/registerhost">
+        <HostRegister />
       </Route>
     </>
   )

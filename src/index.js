@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Repairs } from "./components/Repairs";
+import { RussBuses } from "./components/RussBuses";
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Repairs />
+      <RussBuses />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

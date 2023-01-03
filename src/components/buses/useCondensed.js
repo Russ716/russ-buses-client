@@ -23,9 +23,9 @@ export const useCondensed = ({ limit, field }) => {
         setCondensed(withEllipses)
     }, [original])
 
-    const toggleCondensed = (ticket) => {
+    const toggleCondensed = (bus) => {
         const copy = condensed.map(t => {
-            if (t.id === ticket.id) {
+            if (t.id === bus.id) {
                 t[field] = t.condensed ? t.originalValue : t.condensedValue
                 t.condensed = !t.condensed
             }

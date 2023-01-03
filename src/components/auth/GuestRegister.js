@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react"
 import { useHistory } from "react-router-dom"
 import "./Login.css"
 
-export const EmployeeRegister = (props) => {
-    const [employee, setEmployee] = useState({ "account_type": "employee" })
+export const GuestRegister = () => {
+    const [guest, setGuest] = useState({ "account_type": "guest" })
     const [serverFeedback, setFeedback] = useState("")
     const conflictDialog = useRef()
     const history = useHistory()
@@ -15,7 +15,7 @@ export const EmployeeRegister = (props) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(employee)
+            body: JSON.stringify(guest)
         })
             .then(res => {
                 if (res.status === 200) {
@@ -26,7 +26,7 @@ export const EmployeeRegister = (props) => {
                 });
             })
             .then(createdUser => {
-                localStorage.setItem("honeyrae", JSON.stringify(createdUser))
+                localStorage.setItem("busboy", JSON.stringify(createdUser))
                 history.push("/")
             })
             .catch(error => {
@@ -40,10 +40,10 @@ export const EmployeeRegister = (props) => {
         }
     }, [serverFeedback])
 
-    const updateEmployee = (evt) => {
-        const copy = { ...employee }
+    const updateGuest = (evt) => {
+        const copy = { ...guest }
         copy[evt.target.id] = evt.target.value
-        setEmployee(copy)
+        setGuest(copy)
     }
 
 
@@ -52,42 +52,43 @@ export const EmployeeRegister = (props) => {
             <dialog className="dialog dialog--password" ref={conflictDialog}>
                 <div>{ serverFeedback }</div>
                 <button className="button--close"
-                    onClick={e => conflictDialog.current.close()}>Close</button>
+                    onClick={e => {
+                        conflictDialog.current.close()
+                        setFeedback("")
+                    }}>Close</button>
             </dialog>
 
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Welcome to the team</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Register New Account</h1>
                 <fieldset>
                     <label htmlFor="first_name"> First Name </label>
-                    <input onChange={updateEmployee}
-                        type="text" id="first_name" className="form-control"
-                        placeholder="Enter your first name" required autoFocus />
+                    <input onChange={updateGuest}
+                        type="text" id="first_name"
+                        className="form-control" required autoFocus />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="last_name"> Last Name </label>
-                    <input onChange={updateEmployee}
-                        type="text" id="last_name" className="form-control"
-                        placeholder="Enter your last name" required />
+                    <input onChange={updateGuest}
+                        type="text" id="last_name"
+                        className="form-control" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="specialty"> Specialty </label>
-                    <input onChange={updateEmployee}
+                    <label htmlFor="address"> Address </label>
+                    <input onChange={updateGuest}
                         type="text"
-                        id="specialty"
-                        className="form-control"
-                        placeholder="Tech specialty" required />
+                        id="address"
+                        className="form-control" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="email"> Email address </label>
-                    <input onChange={updateEmployee}
+                    <input onChange={updateGuest}
                         type="email"
                         id="email"
-                        className="form-control"
-                        placeholder="Email address" required />
+                        className="form-control" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="password"> Password </label>
-                    <input onChange={updateEmployee}
+                    <input onChange={updateGuest}
                         type="password"
                         id="password"
                         className="form-control" required />

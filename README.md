@@ -1,10 +1,10 @@
-# Honey Rae's Repairs
+# Russ's Buses Rentals
 
-This is the client application for Honey Rae's Repairs, a small business that perform tech repairs and service for the local community.
+This is the client application for Russ's Buses Rentals: a website to rent party buses, adventure RVs and driven road trip buses.
 
-People can create an account and submit service ticket that contains a brief description of the issue, and then mark whether it is an emergency or not. Emergencies get prioritized by the Honey Rae's staff.
+People can create an account and submit reservation requests that contains preferred dates, and which bus appeals to them. Bus owners can then approve or deny the reservation, to create a rental.
 
-Employees can also create an account and are able to view all of the tickets submitted by customers. An employee can claim a ticket when work begins, and then mark when the job is complete.
+Owners can view all their vehicles, and track how many times they've been rented, and all users can see how many miles they've traveled in a rental.
 
 ## Technology Behind This Project
 
@@ -21,4 +21,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
