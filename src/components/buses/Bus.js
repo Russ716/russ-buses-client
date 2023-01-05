@@ -70,8 +70,9 @@ export const Bus = () => {
   //     }
   // }
 
+  const iconUrl = `https://picsum.photos/id/${bus.id}/800/450?blur=7`
   return (
-    <>
+    <><div className="wrapper">
       <section className="bus">
         <h3 className="bus__description"> 🚌 Bus # {bus.id} Description</h3>
         <div>
@@ -85,7 +86,8 @@ export const Bus = () => {
           <i className="bus__icon">
             Chauffeured: {bus.chauffeured ? "✔️" : "❌"}
           </i>
-          <img className="bus__image" src={bus.image} alt={bus.make} />
+          
+          <img src={iconUrl} alt="random art" />;
           {isStaff() ? (
             <>
               <button onClick={deleteBus}>Delete</button>
@@ -102,6 +104,7 @@ export const Bus = () => {
           )}
         </footer>
       </section>
+    </div>
     </>
   );
 };

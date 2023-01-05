@@ -24,7 +24,8 @@ export const BusForm = () => {
 
         fetchIt(
             "http://localhost:8000/buses",
-            { method: "POST", body: JSON.stringify(bus) }
+            { method: "POST", 
+            body: JSON.stringify(bus) }
         )
             .then(() => history.push("/buses"))
     }

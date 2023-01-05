@@ -59,17 +59,20 @@ export const Login = () => {
                             required />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <div className="center1" >
+                        <button type="submit" className="button-73
+                        " >
                             Sign in
                         </button>
+                        </div>
                     </fieldset>
-                </form>
-            </section>
             <div className="loginLinks">
                 <section className="link--register">
                     <Link to="/register">Not a member yet?</Link>
                 </section>
             </div>
+                </form>
+            </section>
         </main>
     )
 }

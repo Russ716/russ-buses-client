@@ -7,8 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: fira code, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -16,7 +22,7 @@ code {
   color: -webkit-link;
   cursor: pointer;
   text-decoration: underline;
-  background: none!important;
+  background: none !important;
   border: none;
   cursor: pointer;
 }

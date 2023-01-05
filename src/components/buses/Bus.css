@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
@@ -35,7 +34,8 @@ body {
 .content {
   background-color: #ddd;
   padding: 10px;
-  height: 200px; /* Should be removed. Only for demonstration */
+  height: 200px;
+  /* Should be removed. Only for demonstration */
 }
 
 /* Style the footer */
@@ -49,11 +49,13 @@ body {
 *:after {
   box-sizing: border-box;
 }
+
 * {
   margin: 0;
   padding: 0;
   font: inherit;
 }
+
 img,
 picture,
 svg,
@@ -61,80 +63,83 @@ video {
   display: block;
   max-width: 100%;
 }
+
 body {
   min-height: 100vh;
 }
 
-.status--in-progress{
-    
-}
-.status--new{
+.status--in-progress {}
 
-}
-.status--completed{
+.status--new {}
 
-}
-.bus__host{
+.status--completed {}
 
-}
-.bus{
+.bus__host {}
 
-}
-.bus__description{
-
-}
-.bus__footer{
-
-}
-.bus__footer--detail{
-
+body {
+  margin: 40px;
 }
 
-.footerItem{
+.wrapper {
+  width: 80%;
 
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, auto);
 }
-.fakeLink{
 
+.busList {
+  background-color: black;
+  color: gold;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 150%;
 }
-.bus__body{
 
+.busList:nth-child(even) {
+  background-color: gold;
+  color: blue;
 }
-.bus__icon{
 
+.bus__description {}
+
+.bus__footer {}
+
+.bus__footer--detail {}
+
+.footerItem {}
+
+.fakeLink {}
+
+.bus__body {}
+
+.bus__icon {}
+
+.bus__guest {}
+
+.bus__description {}
+
+.busForm {}
+
+.busForm__title {}
+
+.form-group {}
+
+.form-control {}
+
+.btn {}
+
+.btn-primary {}
+
+.activeBuses {}
+
+.buses {}
+
+.bus__halo {
+  display: flex;
+  justify-content: center;
 }
-.bus__guest{
 
-}
-.bus__description{
-
-}
-.busForm{
-
-}
-.busForm__title{
-
-}
-.form-group{
-
-}
-.form-control{
-
-}
-.btn{
-
-}
-.btn-primary{
-
-}
-.activeBuses{
-
-}
-.buses{
-
-}
-.bus__halo{
-
-}
-.bus__customer{
-
+.bus__customer {
+  background-color: grey;
 }

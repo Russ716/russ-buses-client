@@ -39,8 +39,9 @@ export const BusList = () => {
             <button onClick={() => filterBuses("all")}>Show All Buses</button> */}
         </div>
         <div className="activeBuses"></div>
-        <article className="buses">
-            { allBuses.map(bus => <BusCore key={`bus--${bus.id}`} bus={bus} />) }
+        <article className="wrapper">
+            { allBuses.map((bus) => <BusCore key={`bus--${bus.id}`} bus={bus}/>) }
         </article>
     </>
 }
+

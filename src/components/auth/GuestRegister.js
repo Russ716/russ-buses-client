@@ -42,6 +42,7 @@ export const GuestRegister = () => {
 
     const updateGuest = (evt) => {
         const copy = { ...guest }
+        copy.mileageTraveled = 0
         copy[evt.target.id] = evt.target.value
         setGuest(copy)
     }
@@ -65,35 +66,34 @@ export const GuestRegister = () => {
                     <input onChange={updateGuest}
                         type="text" id="first_name"
                         className="form-control" required autoFocus />
-                </fieldset>
-                <fieldset>
+                    <div>
                     <label htmlFor="last_name"> Last Name </label>
                     <input onChange={updateGuest}
                         type="text" id="last_name"
                         className="form-control" required />
-                </fieldset>
-                <fieldset>
+                    </div>
+                    <div>
                     <label htmlFor="address"> Address </label>
                     <input onChange={updateGuest}
                         type="text"
                         id="address"
                         className="form-control" required />
-                </fieldset>
-                <fieldset>
+                    </div>
+                    <div>
                     <label htmlFor="email"> Email address </label>
                     <input onChange={updateGuest}
                         type="email"
                         id="email"
                         className="form-control" required />
-                </fieldset>
-                <fieldset>
+                    </div>
+                    <div>
                     <label htmlFor="password"> Password </label>
                     <input onChange={updateGuest}
                         type="password"
                         id="password"
                         className="form-control" required />
-                </fieldset>
-                <fieldset>
+                    </div>
+                    
                     <button type="submit"> Register </button>
                 </fieldset>
             </form>

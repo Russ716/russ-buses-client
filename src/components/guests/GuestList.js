@@ -16,10 +16,10 @@ export const GuestList = () => {
     useEffect(
         () => {
             if (guests.length === 1) {
-                updateMessage("You have 1 guest")
+                updateMessage("You have had 1 guest")
             }
             else {
-                updateMessage(`You have ${guests.length} guests`)
+                updateMessage(`You have had ${guests.length} guests:`)
             }
         },
         [guests]
@@ -32,7 +32,7 @@ export const GuestList = () => {
             {
                 guests.map(
                     (guestObject) => {
-                        return <p key={`guest--${guestObject.id}`}>{guestObject.full_name}</p>
+                        return <p key={`guest--${guestObject?.id}`}>{guestObject?.full_name}</p>
                     }
                 )
             }
